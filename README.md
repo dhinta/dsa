@@ -1,2 +1,2 @@
 # dsa
-Different Data Structure &amp; Algorithms
+Different Data Structures &amp; Algorithms
