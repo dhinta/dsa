@@ -1,6 +1,12 @@
 // To see this in action
 // run command "node anagram.js param1 param2"
 
+/**
+ * To check If both input build rearranging same letters
+ * Each letter count should be same
+ * Example: School master = The classroom
+ */
+
 const args = process.argv.slice(2);
 
 let param1, param2;
