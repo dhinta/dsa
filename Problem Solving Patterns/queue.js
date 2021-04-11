@@ -16,7 +16,7 @@ class Queue {
   }
 }
 
-const weeve = (source1, source2) => {
+const weave = (source1, source2) => {
   const combined = new Queue();
 
   while (source1.peek() || source2.peek()) {
