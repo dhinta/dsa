@@ -59,14 +59,12 @@ class Bfs {
     let current = this.root;
 
     while (queue.length) {
-      current = queue[0];
+      current = queue.shift();
       const { left, right } = current;
       result.push(current);
 
       if (left) queue.push(left);
       if (right) queue.push(right);
-
-      queue.shift();
     }
 
     return result;
@@ -78,8 +76,7 @@ class Bfs {
     const queue = [this.root];
 
     while (queue.length) {
-      const current = queue[0];
-      queue.shift();
+      const current = queue.shift();
 
       if (current.val === val) return current;
 
