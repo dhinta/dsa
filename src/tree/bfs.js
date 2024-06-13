@@ -8,7 +8,7 @@ class Node {
   }
 }
 
-class Bst {
+class Bfs {
   constructor() {
     this.root = null;
     this.length = 0;
@@ -72,5 +72,21 @@ class Bst {
     return result;
   }
 
-  
+  search(val) {
+    if (this.root === null) return null;
+
+    const queue = [this.root];
+
+    while (queue.length) {
+      const current = queue[0];
+      queue.shift();
+
+      if (current.val === val) return current;
+
+      if (current.left) queue.push(current.left);
+      if (current.right) queue.push(current.right);
+    }
+
+    return null;
+  }
 }
