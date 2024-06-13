@@ -12,7 +12,6 @@ class Bfs {
   constructor() {
     this.root = null;
     this.length = 0;
-    this.depth = 0;
   }
 
   insert(val) {
@@ -21,7 +20,6 @@ class Bfs {
     if (this.root === null) {
       this.root = node;
       this.length++;
-      this.depth++;
       return this;
     }
 
@@ -36,12 +34,14 @@ class Bfs {
     if (node.val > newNode.val) {
       if (node.left === null) {
         node.left = newNode;
+        this.length++;
         return this;
       }
       node = node.left;
     } else {
       if (node.right === null) {
         node.right = newNode;
+        this.length++;
         return this;
       }
       node = node.right;
