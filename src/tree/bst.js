@@ -11,6 +11,7 @@ class Node {
 class Bst {
   constructor() {
     this.root = null;
+    // TODO: Implement depth & length
     this.length = 0;
     this.depth = 0;
   }
