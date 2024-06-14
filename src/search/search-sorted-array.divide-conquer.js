@@ -6,24 +6,24 @@ function search (arr, val) {
 
     let start = 0;
     let end = arr.length - 1;
-    let mid = Math.floor(arr.length / 2);
 
-    while (start < end) {
-
-        if(val > arr[mid]) {
-            start = mid;
-            mid = Math.ceil((start + end) / 2);
-        }
-        
-        if(val < arr[mid]) {
-            end = mid;
-            mid = Math.floor((end - start) / 2);
-        }
-        
-        if(val === arr[mid]) {
-            return mid;
-        }
+    while (start <= end) {
+ 
+        // Find the mid index
+        let mid = Math.floor((start + end) / 2);
+ 
+        // If element is present at 
+        // mid, return True
+        if (arr[mid] === val) return mid;
+ 
+        // Else look in left or 
+        // right half accordingly
+        else if (arr[mid] < val)
+            start = mid + 1;
+        else
+            end = mid - 1;
     }
+ 
 
     return -1;
 }
@@ -31,4 +31,5 @@ function search (arr, val) {
 console.log(search([1,2,3,4,5,6,7,8], 5));
 console.log(search([1,2,3,4,5,6,7,8], 1));
 console.log(search([1,2,3,4,5,6,7,8], 8));
-console.log(search([1,2,3,4,5,6,7,8], 11));
+console.log(search([5,7,7,8,8,10], 6));
+console.log(search([1], 1));
